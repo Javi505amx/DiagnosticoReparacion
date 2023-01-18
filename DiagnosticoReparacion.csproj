@@ -67,10 +67,49 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Consulta.aspx" />
+    <Content Include="ConsultaDiagnosticos.aspx" />
+    <Content Include="ConsultaReparaciones.aspx" />
+    <Content Include="Diagnostico.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Menu.aspx" />
+    <Content Include="MenuConsultas.aspx" />
+    <Content Include="Reparacion.aspx" />
+    <Content Include="ReparacionSalida.aspx" />
+    <Content Include="SalidaScrap.aspx" />
+    <Content Include="Scrap.aspx" />
+    <Content Include="Usuarios.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consulta.aspx.cs">
+      <DependentUpon>Consulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consulta.aspx.designer.cs">
+      <DependentUpon>Consulta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaDiagnosticos.aspx.cs">
+      <DependentUpon>ConsultaDiagnosticos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaDiagnosticos.aspx.designer.cs">
+      <DependentUpon>ConsultaDiagnosticos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaReparaciones.aspx.cs">
+      <DependentUpon>ConsultaReparaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaReparaciones.aspx.designer.cs">
+      <DependentUpon>ConsultaReparaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Diagnostico.aspx.cs">
+      <DependentUpon>Diagnostico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Diagnostico.aspx.designer.cs">
+      <DependentUpon>Diagnostico.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -78,7 +117,56 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuConsultas.aspx.cs">
+      <DependentUpon>MenuConsultas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuConsultas.aspx.designer.cs">
+      <DependentUpon>MenuConsultas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reparacion.aspx.cs">
+      <DependentUpon>Reparacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reparacion.aspx.designer.cs">
+      <DependentUpon>Reparacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReparacionSalida.aspx.cs">
+      <DependentUpon>ReparacionSalida.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReparacionSalida.aspx.designer.cs">
+      <DependentUpon>ReparacionSalida.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalidaScrap.aspx.cs">
+      <DependentUpon>SalidaScrap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalidaScrap.aspx.designer.cs">
+      <DependentUpon>SalidaScrap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Scrap.aspx.cs">
+      <DependentUpon>Scrap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Scrap.aspx.designer.cs">
+      <DependentUpon>Scrap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios.aspx.cs">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Usuarios.aspx.designer.cs">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

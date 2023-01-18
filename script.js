@@ -1,11 +1,11 @@
-const labels = document.querySelectorAll(".form-control label");
+const labels = document.querySelectorAll(".form-control Label");
 
-labels.forEach((label) => {
-  label.innerHTML = label.innerText
+labels.forEach((Label) => {
+  Label.innerHTML = Label.innerText
     .split("")
     .map(
       (letter, idx) =>
-        `<span style="transition-delay:${idx * 30}ms">${letter}</span>`
+        `<asp:Label style="transition-delay:${idx * 30}ms">${letter}</asp:Label>`
     )
     .join("");
 });

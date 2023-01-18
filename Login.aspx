@@ -27,21 +27,33 @@
    
 
 </head>
-<body>
+<body class="body-menu">
+     <div class="header-menu">
+         <div class="nav-logo">
+               <asp:Image ImageUrl="~/Resources/Images/inv.png" runat="server" Height="50px" Width="150px"/>
+        </div>
+        <h1>Diagnóstico & Reparación</h1><br /><br />
+        <div class="nav-user">
+               <asp:Label id="user" runat="server" Text=""></asp:Label>
+        </div>
+
+    </div>
 
     <div class="container" >
-        <h1>Iniciar Sesion</h1>
+        <br />
+        <h2>Iniciar Sesión</h2>
         <form runat="server">
            <div class="form-control">
-                 <asp:Label ID="lblUser" Text="Usuario"  CssClass="label" runat="server"></asp:Label>
-               <asp:TextBox ID="txtWorkOrder" cssClass="text" runat="server"   visible="true"  ></asp:TextBox>
+               <asp:Label ID="lblUser" Text="Usuario"  Font-Bold="true" CssClass="label" runat="server"></asp:Label><br />
+               <asp:TextBox ID="txtUsuario" cssClass="text" runat="server"   visible="true" AutoCompleteType="Disabled" Font-Bold="true" ToolTip="Escanear Usuario"  OnTextChanged="txtUsuario_TextChanged" AutoPostBack="true"></asp:TextBox>
             </div>
            <div class="form-control">
-                 <asp:Label id="lblPassword"  CssClass="label" Text="Contraseña"  runat="server"></asp:Label>
-                 <asp:TextBox id="txtPassword" type="input" cssClass="text" runat="server" TextMode="Password" ></asp:TextBox>
-            </div>
-            <asp:Button id="Button1"  CssClass="btn" Text="Iniciar Sesión" runat="server" />
-            <asp:Label ID="Wrong"  runat="server" Visible="true"> </asp:Label>
+                 <asp:Label id="lblPassword"  Font-Bold="true" CssClass="label" Text="Contraseña"  runat="server"></asp:Label><br />
+                 <asp:TextBox id="txtPassword" type="input" cssClass="text" runat="server" TextMode="Password" AutoCompleteType="Disabled" Font-Bold="true"></asp:TextBox><br />
+            <asp:Label id="labelwrong" CssClass="Wrong" runat="server" Visible="true" Font-Bold="true"  Font-Size="110%"> </asp:Label>
+           </div>
+            <asp:Button id="Button1"  CssClass="btn" Text="Iniciar Sesión" runat="server" OnClick="Button1_Click" Font-Bold="true" />
+            
         </form>
     </div>
 

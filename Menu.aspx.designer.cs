@@ -11,70 +11,88 @@ namespace DiagnosticoReparacion
 {
 
 
-    public partial class Login
+    public partial class Menu
     {
 
         /// <summary>
-        /// user control.
+        /// btnUsuarios control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label user;
+        protected global::System.Web.UI.WebControls.LinkButton btnUsuarios;
 
         /// <summary>
-        /// lblUser control.
+        /// btnConsulta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUser;
+        protected global::System.Web.UI.WebControls.LinkButton btnConsulta;
 
         /// <summary>
-        /// txtUsuario control.
+        /// btnDiagnostico control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUsuario;
+        protected global::System.Web.UI.WebControls.LinkButton btnDiagnostico;
 
         /// <summary>
-        /// lblPassword control.
+        /// btnDiagnostico2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPassword;
+        protected global::System.Web.UI.WebControls.LinkButton btnDiagnostico2;
 
         /// <summary>
-        /// txtPassword control.
+        /// btnReparacion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword;
+        protected global::System.Web.UI.WebControls.LinkButton btnReparacion;
 
         /// <summary>
-        /// labelwrong control.
+        /// btnScrap control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelwrong;
+        protected global::System.Web.UI.WebControls.LinkButton btnScrap;
 
         /// <summary>
-        /// Button1 control.
+        /// btnScrapSalida control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.LinkButton btnScrapSalida;
+
+        /// <summary>
+        /// userlbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label userlbl;
+
+        /// <summary>
+        /// userlabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label userlabel;
     }
 }
