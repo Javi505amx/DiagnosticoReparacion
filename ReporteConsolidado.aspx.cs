@@ -9,21 +9,15 @@ using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 
-
 namespace DiagnosticoReparacion
 {
-    public partial class ConsultaDiagnosticos : System.Web.UI.Page
+    public partial class ReporteConsolidado : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             userlabel.Visible = true;
             userlabel.Text = Session["user"].ToString();
             BindGridView2();
-        }
-
-        protected void btn_export_Click(object sender, EventArgs e)
-        {
-            ExportGridToExcel();
         }
 
         private void ExportGridToExcel()
@@ -48,41 +42,7 @@ namespace DiagnosticoReparacion
         }
         public override void VerifyRenderingInServerForm(Control control)
         {
-
         }
-        protected void txtWO_TextChanged(object sender, EventArgs e)
-        {
-            BindGridView();
-            string WO = txtWO.Text;
-            Session["WO"] = WO;
-        }
-
-        private void BindGridView()
-        {
-
-            string connection = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
-            SqlConnection sqlConnectionData = new SqlConnection(connection);
-            {
-                SqlCommand sqlCommand = new SqlCommand("GetDiagnosticSerialsWO", sqlConnectionData)
-                {
-                    CommandType = CommandType.StoredProcedure
-                };
-                sqlConnectionData.Open();
-                sqlCommand.Parameters.Add("@WorkOrder", SqlDbType.VarChar, 30).Value = txtWO.Text;
-                GridView12.DataSource = sqlCommand.ExecuteReader();
-                if (GridView12.Rows.Count >= 1)
-                {
-                    GridView12.DataBind();
-                }
-                else
-                {
-                    lblTotalWO.Text = "WO No Encontrada";
-                    lblTotalWO.ForeColor = System.Drawing.Color.Red;
-                }
-                sqlConnectionData.Close();
-            }
-        }
-
 
         private void BindGridView2()
         {
@@ -90,7 +50,7 @@ namespace DiagnosticoReparacion
             string connection = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
             SqlConnection sqlConnectionData = new SqlConnection(connection);
             {
-                SqlCommand sqlCommand = new SqlCommand("GetDiagnosticSerials", sqlConnectionData)
+                SqlCommand sqlCommand = new SqlCommand("GetReportConsolidatedDX", sqlConnectionData)
                 {
                     CommandType = CommandType.StoredProcedure
                 };
@@ -102,5 +62,9 @@ namespace DiagnosticoReparacion
             }
         }
 
+        protected void btn_export_Click(object sender, EventArgs e)
+        {
+            ExportGridToExcel();
+        }
     }
 }

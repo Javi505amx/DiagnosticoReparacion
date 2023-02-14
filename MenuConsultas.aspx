@@ -43,9 +43,13 @@
             <asp:LinkButton  id="btnReparaciones" CssClass="btn-menu" runat="server"  Visible="true" PostBackUrl="~/ConsultaReparaciones.aspx">
                 <span class="fas fa-search" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;Reparaciones
             </asp:LinkButton><br /><br /> <br />
-            <asp:LinkButton  id="btnModelos" CssClass="btn-menu" runat="server"  Visible="false" PostBackUrl="~/ConsultaModelos.aspx">
-                <span class="fas fa-search" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;Modelos
+            <asp:LinkButton  id="btnReport" CssClass="btn-menu" runat="server"  Visible="true" PostBackUrl="~/ReporteConsolidado.aspx">
+                <span class="fas fa-search" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;Reporte Consolidado
             </asp:LinkButton><br /><br /> <br />
+            <asp:LinkButton  id="LinkButton1" CssClass="btn-menu" runat="server"  Visible="true" PostBackUrl="~/InventarioBacklog.aspx">
+                <span class="fas fa-menu" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;Reporte Backlog
+            </asp:LinkButton><br /><br /> <br />
+
 
 
           

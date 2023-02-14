@@ -14,6 +14,154 @@ namespace DiagnosticoReparacion
             txtSerial.Focus();
         }
 
+       
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            //variables 
+            string dataScan = txtSerial.Text;
+            DateTime currentDate = DateTime.Now;
+            //Conection To Add a driver into Driver Repair Table
+            string conect2 = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
+            SqlConnection sqlConnection2 = new SqlConnection(conect2);
+            SqlCommand sqlCommand = new SqlCommand("AddDiagnostic2", sqlConnection2)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+            sqlConnection2.Open();
+            //Adding parameters to Stored Procedure Called "AddDriverRepair"
+            sqlCommand.Parameters.Add("@SerialNumber", SqlDbType.VarChar, 50).Value = dataScan;
+            sqlCommand.Parameters.Add("@EndUser", SqlDbType.VarChar, 30).Value = userlabel.Text.ToUpper();
+            sqlCommand.Parameters.Add("@EndDate", SqlDbType.DateTime, 50).Value = currentDate;
+            sqlCommand.Parameters.Add("@Diagnostic", SqlDbType.VarChar, 100).Value = ListValue.SelectedValue.ToString();
+            sqlCommand.Parameters.Add("@Location", SqlDbType.VarChar, 30).Value = txtLoc.Text.ToUpper();
+            sqlCommand.Parameters.Add("@Comments", SqlDbType.VarChar, 250).Value = txtComments.Text.ToUpper();
+
+            sqlCommand.CommandTimeout = 9000;
+            SqlDataReader sqlDataReader2 = sqlCommand.ExecuteReader();
+            sqlDataReader2.Read();
+            int rowsInserted = sqlDataReader2.GetInt32(sqlDataReader2.GetOrdinal("rowAffected"));
+            //if the SerialNumber was succesfullly inserted into Driver repair Table, the Label "Res", set Text to  "INGRESADO CORRECTAMENTE";
+            if (rowsInserted == 1)
+            {
+                res.Attributes.Add("class", "alert alert-success");
+                res.Attributes.Add("role", "alert");
+                res.Text = "DIAGNOSTICADO CON EXITO";
+                res.ForeColor = System.Drawing.Color.Green;
+                lblSN.Text = dataScan;
+                txtSerial.Text = "";
+                txtSerial.Focus();
+
+
+            }
+
+            else if (rowsInserted == 2)
+            {
+                res.Attributes.Add("class", "alert alert-danger");
+                res.Attributes.Add("role", "alert");
+                res.Text = "DRIVER  DIAGNOSTICADO";
+                res.ForeColor = System.Drawing.Color.Orange;
+                lblSN.Text = dataScan;
+                txtSerial.Text = "";
+                // txtCodeDefect.Text = "";
+                txtSerial.Focus();
+            }
+
+            else if (rowsInserted == 3)
+            {
+                res.Attributes.Add("class", "alert alert-primary font-weight-bold");
+                res.Attributes.Add("role", "alert");
+                res.Text = "DRIVER REPARADO";
+                res.ForeColor = System.Drawing.Color.Blue;
+                lblSN.Text = dataScan;
+                txtSerial.Text = "";
+                // txtCodeDefect.Text = "";
+                txtSerial.Focus();
+            }
+            else if (rowsInserted == 4)
+            {
+                res.Attributes.Add("class", "alert alert-primary font-weight-bold");
+                res.Attributes.Add("role", "alert");
+                res.Text = "DRIVER EN SCRAP";
+                res.ForeColor = System.Drawing.Color.Blue;
+                lblSN.Text = dataScan;
+                txtSerial.Text = "";
+                // txtCodeDefect.Text = "";
+                txtSerial.Focus();
+            }
+            else if (rowsInserted == 8)
+            {
+                res.Attributes.Add("class", "alert alert-danger font-weight-bold");
+                res.Attributes.Add("role", "alert");
+                res.Text = "CONTACTAR A IT";
+                res.ForeColor = System.Drawing.Color.Red;
+                lblSN.Text = dataScan;
+                txtSerial.Text = "";
+                // txtCodeDefect.Text = "";
+                txtSerial.Focus();
+            }
+            lblFalla.Text = "";
+            lblValor.Text = "";
+            lblUSER.Text = "";
+            lblDATE.Text = "";
+            ListValue.SelectedIndex = 0;
+            txtComments.Text = "";
+            txtLoc.Text = "";
+            btnSave.Visible = false;
+            btnCancel.Visible = false;
+            Label4.Visible = false;
+            Label1.Visible = false;
+            Label2.Visible = false;
+            Label3.Visible = false;
+            //txtDiag.Visible = false;
+            ListValue.Visible = false;
+            txtLoc.Visible = false;
+            //txtValue.Visible = false;
+            data4.Visible = false;
+            data5.Visible = false;
+            sqlConnection2.Close();
+            Label6.Visible = false;
+            txtComments.Visible = false;
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtSerial.Text = "";
+            data1.Visible = false;
+            data2.Visible = false;
+            data3.Visible = false;
+            data4.Visible = false;
+            data5.Visible = false;
+            lblMOD.Visible = false;
+            lblWO.Visible = false;
+            lblSN.Visible = false;
+            //txtDiag.Visible = false;
+            ListValue.Visible=false;
+            txtLoc.Visible = false;
+            Label1.Visible = false;
+            Label2.Visible = false; 
+            Label3.Visible = false;
+            Label4.Visible = false;
+            txtLoc.Text = "";
+            //txtDiag.Text = "";
+            ListValue.SelectedIndex = 0;
+            lblSN.Text = "";
+            lblWO.Text = "";
+            lblMOD.Text = "";
+            lblSN.ForeColor = System.Drawing.Color.DarkBlue;
+            lblWO.ForeColor = System.Drawing.Color.Black;
+            lblMOD.ForeColor = System.Drawing.Color.Black;
+            btnSave.Visible = false;
+            btnCancel.Visible = false;
+            res.Visible = false;
+            res.Text = "";
+            txtComments.Text = "";
+            Label6.Visible = false;
+            Label4.Visible = false;
+            Label3.Visible = false;
+
+        }
+
         protected void txtSerial_TextChanged(object sender, EventArgs e)
         {
             string workOrder, serialNumber, modelo, dataScan = txtSerial.Text;
@@ -69,8 +217,8 @@ namespace DiagnosticoReparacion
                 Label2.Visible = true;
                 Label3.Visible = true;
                 Label4.Visible = true;
-                txtDiag.Visible = true;
                 txtLoc.Visible = true;
+                txtComments.Visible = true;
                 btnSave.Visible = true;
                 btnCancel.Visible = true;
                 lblFalla.Visible = true;
@@ -79,13 +227,10 @@ namespace DiagnosticoReparacion
                 Label2.Visible = true;
                 res.Visible = true;
                 desc.Visible = true;
-
-                //lblCodeDefect.Visible = true;
-                //txtCodeDefect.Visible = true;
-                //lblCodeDefect.Enabled = true;
-                //txtCodeDefect.Enabled = true;
-                //txtCodeDefect.Focus();
+                Label5.Visible = true;
                 res.Text = "";
+                ListValue.Visible = true;
+                Label6.Visible = false;
             }
             else
             {
@@ -115,140 +260,16 @@ namespace DiagnosticoReparacion
                 Label1.Visible = false;
                 Label2.Visible = false;
                 Label3.Visible = false;
-                txtDiag.Visible = false;
+                //txtDiag.Visible = false;
                 txtLoc.Visible = false;
+                txtComments.Visible = false;
+                Label6.Visible = false;
+                Label5.Visible = false;
+                ListValue.Visible = false;
+                Label4.Visible = false;
+                lblFalla.Visible = false;
+                lblFalla.Text = "";
             }
-        }
-
-        protected void btnSave_Click(object sender, EventArgs e)
-        {
-            //variables 
-            string dataScan = txtSerial.Text;
-            DateTime currentDate = DateTime.Now;
-            //Conection To Add a driver into Driver Repair Table
-            string conect2 = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
-            SqlConnection sqlConnection2 = new SqlConnection(conect2);
-            SqlCommand sqlCommand = new SqlCommand("AddDiagnostic", sqlConnection2)
-            {
-                CommandType = CommandType.StoredProcedure
-            };
-            sqlConnection2.Open();
-            //Adding parameters to Stored Procedure Called "AddDriverRepair"
-            sqlCommand.Parameters.Add("@SerialNumber", SqlDbType.VarChar, 50).Value = dataScan;
-            sqlCommand.Parameters.Add("@EndUser", SqlDbType.VarChar, 30).Value = userlabel.Text;
-            sqlCommand.Parameters.Add("@EndDate", SqlDbType.DateTime, 50).Value = currentDate;
-            sqlCommand.Parameters.Add("@Diagnostic", SqlDbType.VarChar, 30).Value = txtDiag.Text;
-            sqlCommand.Parameters.Add("@Location", SqlDbType.VarChar, 30).Value = txtLoc.Text;
-
-            sqlCommand.CommandTimeout = 9000;
-            SqlDataReader sqlDataReader2 = sqlCommand.ExecuteReader();
-            sqlDataReader2.Read();
-            int rowsInserted = sqlDataReader2.GetInt32(sqlDataReader2.GetOrdinal("rowAffected"));
-            //if the SerialNumber was succesfullly inserted into Driver repair Table, the Label "Res", set Text to  "INGRESADO CORRECTAMENTE";
-            if (rowsInserted == 1)
-            {
-                res.Attributes.Add("class", "alert alert-success");
-                res.Attributes.Add("role", "alert");
-                res.Text = "DIAGNOSTICADO CON EXITO";
-                res.ForeColor = System.Drawing.Color.Green;
-                lblSN.Text = dataScan;
-                txtSerial.Text = "";
-                txtSerial.Focus();
-            }
-
-            else if (rowsInserted == 2)
-            {
-                res.Attributes.Add("class", "alert alert-danger");
-                res.Attributes.Add("role", "alert");
-                res.Text = "DRIVER  DIAGNOSTICADO";
-                res.ForeColor = System.Drawing.Color.Orange;
-                lblSN.Text = dataScan;
-                txtSerial.Text = "";
-                // txtCodeDefect.Text = "";
-                txtSerial.Focus();
-            }
-
-            else if (rowsInserted == 3)
-            {
-                res.Attributes.Add("class", "alert alert-primary font-weight-bold");
-                res.Attributes.Add("role", "alert");
-                res.Text = "DRIVER REPARADO";
-                res.ForeColor = System.Drawing.Color.Blue;
-                lblSN.Text = dataScan;
-                txtSerial.Text = "";
-                // txtCodeDefect.Text = "";
-                txtSerial.Focus();
-            }
-            else if (rowsInserted == 4)
-            {
-                res.Attributes.Add("class", "alert alert-primary font-weight-bold");
-                res.Attributes.Add("role", "alert");
-                res.Text = "DRIVER EN SCRAP";
-                res.ForeColor = System.Drawing.Color.Blue;
-                lblSN.Text = dataScan;
-                txtSerial.Text = "";
-                // txtCodeDefect.Text = "";
-                txtSerial.Focus();
-            }
-            else if (rowsInserted == 8)
-            {
-                res.Attributes.Add("class", "alert alert-danger font-weight-bold");
-                res.Attributes.Add("role", "alert");
-                res.Text = "CONTACTAR A IT";
-                res.ForeColor = System.Drawing.Color.Red;
-                lblSN.Text = dataScan;
-                txtSerial.Text = "";
-                // txtCodeDefect.Text = "";
-                txtSerial.Focus();
-            }
-            lblFalla.Text = "";
-            lblValor.Text = "";
-            lblUSER.Text = "";
-            lblDATE.Text = "";
-            
-            btnSave.Visible = false;
-            btnCancel.Visible = false;
-            Label4.Visible = false;
-            Label1.Visible = false;
-            Label2.Visible = false;
-            Label3.Visible = false;
-            txtDiag.Visible = false;
-            txtLoc.Visible = false;
-            //txtValue.Visible = false;
-            data4.Visible = false;
-            data5.Visible = false;
-            sqlConnection2.Close();
-        }
-
-        protected void btnCancel_Click(object sender, EventArgs e)
-        {
-            txtSerial.Text = "";
-            data1.Visible = false;
-            data2.Visible = false;
-            data3.Visible = false;
-            data4.Visible = false;
-            data5.Visible = false;
-            lblMOD.Visible = false;
-            lblWO.Visible = false;
-            lblSN.Visible = false;
-            txtDiag.Visible = false;
-            txtLoc.Visible = false;
-            Label1.Visible = false;
-            Label2.Visible = false; 
-            Label3.Visible = false;
-            Label4.Visible = false;
-            txtLoc.Text = "";
-            txtDiag.Text = "";
-            lblSN.Text = "";
-            lblWO.Text = "";
-            lblMOD.Text = "";
-            lblSN.ForeColor = System.Drawing.Color.DarkBlue;
-            lblWO.ForeColor = System.Drawing.Color.Black;
-            lblMOD.ForeColor = System.Drawing.Color.Black;
-            btnSave.Visible = false;
-            btnCancel.Visible = false;
-            res.Visible = false;
-            res.Text = "";
         }
     }
 }

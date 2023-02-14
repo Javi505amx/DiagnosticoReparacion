@@ -39,7 +39,9 @@
                 <asp:Label ID="data5" runat="server" Text="Fecha Diagnostico:" Visible="false"></asp:Label><br />
                 <asp:Label ID="data7" runat="server" Text="Diagnostico:" Visible="false"></asp:Label><br />
                 <asp:Label ID="data8" runat="server" Text="Locacion:" Visible="false"></asp:Label><br />
+                <asp:Label ID="Label3" runat="server" Text="Comentarios:" Visible="false"></asp:Label><br />
                 <asp:Label ID="data6" runat="server" Text="Reparacion Realizada:" Visible="false"></asp:Label>
+
 
             </div>
             <div id="labelr" class="labelr">
@@ -50,7 +52,8 @@
                 &nbsp;&nbsp;<asp:Label ID="lblDATE" runat="server" Text="" Visible="false" ></asp:Label><br />
                 &nbsp;&nbsp;<asp:Label ID="lblDiagnostic" runat="server" Text="" Visible="false" ></asp:Label><br />
                 &nbsp;&nbsp;<asp:Label ID="lblLoc" runat="server" Text="" Visible="false" ></asp:Label><br />
-                &nbsp;&nbsp;<asp:TextBox ID="Repair" runat="server" Text="" Visible="false"></asp:TextBox>
+                <asp:Label ID="lblcomments" runat="server" CssClass="txtComments" Text=":" Visible="false"></asp:Label><br />
+                &nbsp;&nbsp;<asp:TextBox ID="Repair" Class="txtComments" runat="server" Text="" Visible="false"></asp:TextBox>
             </div>
              
             <br />
