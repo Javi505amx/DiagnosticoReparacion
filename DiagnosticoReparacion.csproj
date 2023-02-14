@@ -71,11 +71,13 @@
     <Content Include="ConsultaDiagnosticos.aspx" />
     <Content Include="ConsultaReparaciones.aspx" />
     <Content Include="Diagnostico.aspx" />
+    <Content Include="InventarioBacklog.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Menu.aspx" />
     <Content Include="MenuConsultas.aspx" />
     <Content Include="Reparacion.aspx" />
     <Content Include="ReparacionSalida.aspx" />
+    <Content Include="ReporteConsolidado.aspx" />
     <Content Include="SalidaScrap.aspx" />
     <Content Include="Scrap.aspx" />
     <Content Include="Usuarios.aspx" />
@@ -109,6 +111,13 @@
     </Compile>
     <Compile Include="Diagnostico.aspx.designer.cs">
       <DependentUpon>Diagnostico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InventarioBacklog.aspx.cs">
+      <DependentUpon>InventarioBacklog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InventarioBacklog.aspx.designer.cs">
+      <DependentUpon>InventarioBacklog.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -145,6 +154,13 @@
     </Compile>
     <Compile Include="ReparacionSalida.aspx.designer.cs">
       <DependentUpon>ReparacionSalida.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteConsolidado.aspx.cs">
+      <DependentUpon>ReporteConsolidado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteConsolidado.aspx.designer.cs">
+      <DependentUpon>ReporteConsolidado.aspx</DependentUpon>
     </Compile>
     <Compile Include="SalidaScrap.aspx.cs">
       <DependentUpon>SalidaScrap.aspx</DependentUpon>

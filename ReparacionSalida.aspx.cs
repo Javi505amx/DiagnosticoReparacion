@@ -44,7 +44,7 @@ namespace DiagnosticoReparacion
                 DateTime DateIn = sqlDataReaderData.GetDateTime(sqlDataReaderData.GetOrdinal("DiagnosticDate"));
                 string Diagnostic = sqlDataReaderData.GetString(sqlDataReaderData.GetOrdinal("Diagnostic"));
                 string Location = sqlDataReaderData.GetString(sqlDataReaderData.GetOrdinal("Location"));
-
+                string Comments = sqlDataReaderData.GetString(sqlDataReaderData.GetOrdinal("Comments"));
                 //string falla = sqlDataReaderData.GetString(sqlDataReaderData.GetOrdinal("Failure"));
                 //string valor = sqlDataReaderData.GetString(sqlDataReaderData.GetOrdinal("Value"));
 
@@ -70,6 +70,7 @@ namespace DiagnosticoReparacion
                 lblUSER.Text = UserIn;
                 lblDATE.Text = DateIn.ToString();
                 lblDiagnostic.Text = Diagnostic;
+                lblcomments.Text = Comments;
                // lblFalla.Text = falla;
                // lblValor.Text = valor;
                 lblSN.ForeColor = System.Drawing.Color.DarkBlue;
@@ -89,7 +90,8 @@ namespace DiagnosticoReparacion
                 //txtCodeDefect.Enabled = true;
                 //txtCodeDefect.Focus();
                 res.Text = "";
-
+                lblcomments.Visible = true;
+                Label3.Visible = true;
                 lblDiagnostic.Visible = true;
                 data6.Visible = true;
                 data7.Visible = true;
@@ -120,6 +122,16 @@ namespace DiagnosticoReparacion
                 lblUSER.ForeColor = System.Drawing.Color.Red;
                 lblDATE.ForeColor = System.Drawing.Color.Red;
                 txtSerial.Text = "";
+                lblcomments.Visible = false;
+                Label3.Visible = false;
+                lblDiagnostic.Visible = false;
+                lblDiagnostic.Text = "";
+                data7.Visible = false;
+                data8.Visible = false;  
+                lblLoc.Visible = false;
+                data6.Visible = false;
+                Repair.Text = "";
+                Repair.Visible=false;
             }
         }
 

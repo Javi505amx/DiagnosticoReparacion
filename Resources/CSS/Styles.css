@@ -35,7 +35,6 @@ body{
 }
 
 .btn{
-   /** cursor: pointer;**/
     display:inline-block;
     width: 100%;
     background: #00ae47;
@@ -50,7 +49,6 @@ body{
 }
 .label{
     color: cadetblue;
-    
 }
 .btn:hover{
 transform: scale(1.05);
@@ -221,23 +219,47 @@ text-align: center;
     margin-bottom:0;
   }
   .card{
-    border: 0;
+    /* border: 0;
     background-color: transparent;
     top:150px;
     width: fit-content;
     height: 350px;
     text-align: center;
-    margin: 0px 180px 0 125px;
+    margin: 0px 180px 0 125px; */
+
+    border: 0;
+    /* top:40px; */
+    background-color: transparent;
+    width: 85%;
+    height: 70%;
+    text-align: center;
+    margin: 150px 180px 0 0.5%;
+
+}
+.card2{
+    border: 0;
+    /* top:40px; */
+    background-color: transparent;
+    width: 88%;
+    height: 85%;
+    text-align: center;
+    margin: 5% 5% 0 0.35%;
 
 }
 .GridView1{
     color: cadetblue;
 }
 .scrolling-table-container {
-    height: 500px;
-    width:fit-content;
+    height: 100%;
+    width:100%;
     overflow-y: scroll;
-    overflow-x: hidden;
+    overflow-x: scroll;
+}
+.scrolling-table-container2 {
+    height: 75%;
+    width:80%;
+    overflow-y: scroll;
+    overflow-x: scroll;
 }
 .card-body{
     background-color: transparent;
@@ -607,4 +629,57 @@ font-weight: bold;
         font-size: 50px;
         /**color: #00ae47;**/
        /* color:#ff5555;*/
+    }
+
+    #txtComments{
+        height: 100px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+        
+    }
+    .txtComments{
+        height: 60px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        
+    }
+    .header
+    {
+    background-color: #646464;
+    font-family: Arial;
+    color: White;
+    border: none 0px transparent;
+    height: 25px;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+    }
+    .header:hover{
+        text-decoration: none;
+        color:white
+    }
+    .FixedHeader {
+        margin-top:-23px; 
+         
+         font-weight: bold;
+         margin-right:5px;
+     }
+     .rows
+    {
+    background-color: #fff;
+    font-family: Arial;
+    font-size: 14px;
+    color: #000;
+    min-height: 25px;
+    text-align: left;
+    border: none 0px transparent;
+    }
+    .rows:hover
+    {
+    font-family: Arial;
+    text-align: left;
+    font-weight:bolder
     }

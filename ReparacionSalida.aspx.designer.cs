@@ -105,6 +105,15 @@ namespace DiagnosticoReparacion
         protected global::System.Web.UI.WebControls.Label data8;
 
         /// <summary>
+        /// Label3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label3;
+
+        /// <summary>
         /// data6 control.
         /// </summary>
         /// <remarks>
@@ -175,6 +184,15 @@ namespace DiagnosticoReparacion
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblLoc;
+
+        /// <summary>
+        /// lblcomments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblcomments;
 
         /// <summary>
         /// Repair control.

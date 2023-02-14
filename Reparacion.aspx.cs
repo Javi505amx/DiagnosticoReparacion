@@ -65,8 +65,9 @@ namespace DiagnosticoReparacion
                 btnSave.Visible = true;
                 btnCancel.Visible = true;
                 txtValue.Visible = true;
-                ListValue.Visible = true;
+                ListValue.Visible = true;   
                 LinkButton1.Visible = false;
+                
 
 
             }
@@ -110,11 +111,12 @@ namespace DiagnosticoReparacion
             //Adding parameters to Stored Procedure Called "AddDriverRepair"
             sqlCommand.Parameters.Add("@SerialNumber", SqlDbType.VarChar, 50).Value = dataScan;
             sqlCommand.Parameters.Add("@RepairDate", SqlDbType.DateTime, 50).Value = currentDate;
-            sqlCommand.Parameters.Add("@RepairUser", SqlDbType.VarChar, 30).Value = userlabel.Text;
-            sqlCommand.Parameters.Add("@Failure", SqlDbType.VarChar, 30).Value = ListValue.SelectedValue.ToString();
-            sqlCommand.Parameters.Add("@Value", SqlDbType.VarChar, 20).Value = txtValue.Text;
+            sqlCommand.Parameters.Add("@RepairUser", SqlDbType.VarChar, 30).Value = userlabel.Text.ToLower();
+            sqlCommand.Parameters.Add("@Failure", SqlDbType.VarChar, 100).Value = ListValue.SelectedValue.ToString();
+            sqlCommand.Parameters.Add("@Value", SqlDbType.VarChar, 20).Value = txtValue.Text.ToUpper();
 
-
+            /** 
+             * **/
             //sqlCommand.Parameters.Add("@CodeDefect", SqlDbType.VarChar, 20).Value = txtCodeDefect.Text;
             sqlCommand.CommandTimeout = 9000;
             SqlDataReader sqlDataReader2 = sqlCommand.ExecuteReader();
