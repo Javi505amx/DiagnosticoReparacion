@@ -51,7 +51,7 @@ namespace DiagnosticoReparacion
                 lblSN.Text = dataScan;
                 txtSerial.Text = "";
                 txtSerial.Focus();
-
+                
 
             }
 
@@ -227,10 +227,10 @@ namespace DiagnosticoReparacion
                 Label2.Visible = true;
                 res.Visible = true;
                 desc.Visible = true;
-                Label5.Visible = true;
+                //Label5.Visible = true;
                 res.Text = "";
                 ListValue.Visible = true;
-                Label6.Visible = false;
+                Label6.Visible = true;
             }
             else
             {
@@ -264,7 +264,7 @@ namespace DiagnosticoReparacion
                 txtLoc.Visible = false;
                 txtComments.Visible = false;
                 Label6.Visible = false;
-                Label5.Visible = false;
+                //Label5.Visible = false;
                 ListValue.Visible = false;
                 Label4.Visible = false;
                 lblFalla.Visible = false;

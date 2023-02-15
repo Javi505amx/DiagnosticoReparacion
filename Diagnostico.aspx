@@ -43,7 +43,7 @@
                 <asp:Label ID="Label2" runat="server" Text="Valor:" Visible="false"></asp:Label><br />
                 <asp:Label ID="Label6" runat="server" Text="Diagnostico:" Visible="false"></asp:Label><br /><br />
                 <%--<asp:Label ID="Label5" runat="server" Text="Diagnostico:" Visible="false"></asp:Label><br />--%>
-                <asp:Label ID="Label4" runat="server" Text="Locación:" Visible="false"></asp:Label><br />
+                <asp:Label ID="Label4" runat="server" Text="Locación:" Visible="false"></asp:Label><br /><br /><br />
                 <asp:Label ID="Label3" runat="server" Text="Comentarios:" Visible="false"></asp:Label><br />
             </div>
             <div id="labelr" class="labelr">
@@ -138,9 +138,9 @@
                     <asp:ListItem Value="DOB025" Text="DOB025-Housing invertido"></asp:ListItem>--%>
                 </asp:DropDownList><br /><br />
                 <%--&nbsp;&nbsp;<asp:TextBox ID="txtDiag" runat="server" Text="" Visible="false" ></asp:TextBox><br />--%>
-                &nbsp;&nbsp;<asp:TextBox ID="txtLoc" runat="server" Text="" Visible="false" AutoCompleteType="Disabled" Style="text-transform: uppercase" ></asp:TextBox><br />
-                <asp:Label ID="Label5" runat="server" Text="Comentarios:" Visible="false"></asp:Label>
-                &nbsp;&nbsp;<asp:TextBox ID="txtComments"  runat="server" Text="" Visible="false" AutoCompleteType="Disabled" Style="text-transform: uppercase"  ></asp:TextBox><br />
+                &nbsp;&nbsp;<asp:TextBox ID="txtLoc" runat="server" Text="" Visible="false" AutoCompleteType="Disabled" Style="text-transform: uppercase" ></asp:TextBox><br /><br />
+                <%--<asp:Label ID="Label5" runat="server" Text="" Visible="false"></asp:Label>--%>
+                &nbsp;&nbsp;<asp:TextBox ID="txtComments" runat="server" Text="" Visible="false"  TextMode="MultiLine" Rows="6" focus="" AutoCompleteType="Disabled" Style="text-transform: uppercase; "  ></asp:TextBox><br />
             </div>
 <%--             <div id="labelo" class="labels">
                 <asp:Label ID="Label1" runat="server" Text="Falla:" Visible="false"></asp:Label><br />

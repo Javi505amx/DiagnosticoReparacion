@@ -22,13 +22,13 @@
             <div class="nav-logo">
                 <asp:Image ImageUrl="~/Resources/Images/inv.png" runat="server" Height="50px" Width="150px" />
             </div>
-            <h1>CONSULTA DIAGNÓSTICOS</h1>
+            <h1>CONSULTA REPARACIONES</h1>
         </div>
         <div class="form-repa">
             <asp:Label ID="lblWO" runat="server" Text="INGRESAR WORK ORDER" Font-Size="150%" Font-Bold="true"></asp:Label><br />
             <asp:TextBox ID="txtWO" runat="server" ForeColor="#0079bc" AutoPostBack="true" Font-Size="150%" Style="text-transform: uppercase" AutoCompleteType="Disabled" OnTextChanged="txtWO_TextChanged"></asp:TextBox><br />
         </div>
-        <div class="card ">
+        <div class="card "> 
             <div class="card-body scrolling-table-container">
                 <asp:GridView ID="GridView12" HeaderStyle-CssClass="bg-secondary text-white" ShowHeaderWhenEmpty="true" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-hover table-condensed small-top-margin">
                     <EmptyDataTemplate>
