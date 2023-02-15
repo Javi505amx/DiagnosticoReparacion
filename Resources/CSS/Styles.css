@@ -631,21 +631,14 @@ font-weight: bold;
        /* color:#ff5555;*/
     }
 
-    #txtComments{
+     #txtComments{
         height: 100px;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        font-weight: bold;
-        
-    }
-    .txtComments{
-        height: 60px;
-        width: 100%;
+        width: 80%;
         margin: 0;
         padding: 0;
         
     }
+    
     .header
     {
     background-color: #646464;
